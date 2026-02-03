@@ -188,7 +188,8 @@ a.logo:link {
     .device-card.small { width: 100%; justify-content: center; }
 
     .carousel-wrapper {
-        gap: 5px;
+        flex-direction: column;
+        gap: 20px;
         padding: 0;
         margin-bottom: 30px;
         width: 100%;
@@ -199,6 +200,7 @@ a.logo:link {
         min-height: auto;
         overflow: hidden;
         width: 100%;
+        order: 1;
     }
 
     .carousel-slide {
@@ -237,16 +239,26 @@ a.logo:link {
     }
 
     .carousel-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 0.8rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
         flex-shrink: 0;
+        position: relative;
+        order: 2;
+    }
+
+    .carousel-arrow.left {
+        order: 0;
+    }
+
+    .carousel-arrow.right {
+        order: 3;
     }
 
     .story-content {
-        padding: 20px 15px;
-        width: calc(100vw - 80px);
-        max-width: calc(100vw - 80px);
+        padding: 25px 20px;
+        width: 90vw;
+        max-width: 90vw;
         height: auto;
         min-height: auto;
         margin: 0 auto;
@@ -255,12 +267,12 @@ a.logo:link {
     }
 
     .story-content h2 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
     }
 
     .line {
-        margin: 0 auto 15px;
+        margin: 0 auto 20px;
     }
 
     .text-block {
@@ -269,9 +281,9 @@ a.logo:link {
     }
 
     .text-block p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-bottom: 12px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 14px;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
@@ -279,6 +291,7 @@ a.logo:link {
     .carousel-dots {
         margin-top: 20px;
         margin-bottom: 20px;
+        order: 4;
     }
 
     #story {
