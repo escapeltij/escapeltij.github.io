@@ -46,20 +46,29 @@ nav {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.logo {
+a.logo {
     font-weight: 800;
     font-size: 1.5rem;
-    text-decoration: none;
+    text-decoration: none !important;
     color: #fff !important;
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
 
-.logo:hover {
+a.logo:hover {
     opacity: 0.8;
+    color: #fff !important;
 }
 
-.logo:visited {
+a.logo:visited {
+    color: #fff !important;
+}
+
+a.logo:active {
+    color: #fff !important;
+}
+
+a.logo:link {
     color: #fff !important;
 }
 
@@ -172,59 +181,64 @@ nav {
     .device-card.small { width: 100%; justify-content: center; }
 
     .carousel-wrapper {
-        gap: 10px;
+        gap: 5px;
+        padding: 0 10px;
     }
 
     .carousel-container {
-        min-height: 550px;
+        min-height: 650px;
         overflow: hidden;
     }
 
     .carousel-slide:nth-child(1).active {
-        transform: translateX(-50px) scale(1);
+        transform: translateX(0) scale(1);
     }
 
     .carousel-slide:nth-child(2).active {
-        transform: translateX(50px) scale(1);
+        transform: translateX(0) scale(1);
     }
 
     .carousel-slide:nth-child(1).next {
-        transform: translateX(-350px) scale(0.8);
-        opacity: 0.3;
+        transform: translateX(100vw) scale(0.7);
+        opacity: 0;
     }
 
     .carousel-slide:nth-child(2).next {
-        transform: translateX(350px) scale(0.8);
-        opacity: 0.3;
+        transform: translateX(100vw) scale(0.7);
+        opacity: 0;
     }
 
     .carousel-slide:nth-child(1).prev {
-        transform: translateX(-350px) scale(0.8);
-        opacity: 0.3;
+        transform: translateX(-100vw) scale(0.7);
+        opacity: 0;
     }
 
     .carousel-slide:nth-child(2).prev {
-        transform: translateX(350px) scale(0.8);
-        opacity: 0.3;
+        transform: translateX(-100vw) scale(0.7);
+        opacity: 0;
     }
 
     .carousel-arrow {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         font-size: 1rem;
+        flex-shrink: 0;
     }
 
     .story-content {
         padding: 30px 20px;
-        width: 90vw;
+        width: 85vw;
+        height: auto;
+        min-height: 500px;
     }
 
     .story-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .text-block p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .play-icon-wrapper {
