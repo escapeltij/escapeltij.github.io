@@ -50,13 +50,17 @@ nav {
     font-weight: 800;
     font-size: 1.5rem;
     text-decoration: none;
-    color: #fff;
+    color: #fff !important;
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
 
 .logo:hover {
     opacity: 0.8;
+}
+
+.logo:visited {
+    color: #fff !important;
 }
 
 .accent { color: var(--accent); }
