@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape LTIJ</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="glass">
-        <div class="logo">ESCAPE <span class="accent">LTIJ</span></div>
+        <a href="index.html" class="logo">ESCAPE <span class="accent">LTIJ</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Acasă</a></li>
             <li><a href="team.html">Echipă</a></li>
@@ -96,25 +97,57 @@
 	
 
     <section id="story" class="container">
-        <div class="story-content">
-            <h2>Cum a început totul?</h2>
-            <div class="line"></div>
-            
-            <div class="text-block">
-                <p>
-                    Sincer? Totul a început într-o seară din <strong>vacanta</strong>, pur și simplu din plictiseală. Voiam să văd dacă pot recrea clădirea liceului în Roblox. Nu aveam în plan să fac un joc complet funcțional sau ceva complex, voiam doar să mă distrez construind.
-                </p>
-                <p>
-                    Am lucrat cam o săptămână, am făcut câteva clase, holurile și am recreat obiecte reale din școală, după care am uitat de el. Proiectul a rămas neatins o vreme.
-                </p>
-                <p>
-                    Dar anul acesta în <strong>ianuarie</strong> mi-am reamintit de el și, uitându-mă la ce construisem, mi-am dat seama că are potențial. E ceva special să te joci într-un loc pe care îl cunoști. Chiar dacă harta nu e 100% perfectă pentru că nu sunt arhitect, vibe-ul e acolo.
-                </p>
-                <p>
-                    <strong>Escape LTIJ</strong> nu e doar despre a evada, e despre liceul nostru.
-                </p>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left" id="prevSlide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="story-content">
+                        <h2>Ce este Escape LTIJ?</h2>
+                        <div class="line"></div>
+                        
+                        <div class="text-block">
+                            <p>
+                                <strong>Escape LTIJ</strong> este un joc pe Roblox bazat pe liceul nostru local, <strong>Liceul Teoretic "Ioan Jebelean"</strong>. Am recreat fiecare colț al clădirii, de la clase și holuri până la birouri și terenul din spate.
+                            </p>
+                            <p>
+                                Scopul? <strong>Să evadezi din liceu</strong>. Jocul include NPC-uri inspirate din profesori și personal real. Trebuie să completezi diverse task-uri și să fii strategic pentru a găsi o cale de ieșire.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="story-content">
+                        <h2>Cum a început totul?</h2>
+                        <div class="line"></div>
+                        
+                        <div class="text-block">
+                            <p>
+                                Sincer? Totul a început într-o seară din <strong>vacanta</strong>, pur și simplu din plictiseală. Voiam să văd dacă pot recrea clădirea liceului în Roblox. Nu aveam în plan să fac un joc complet funcțional sau ceva complex, voiam doar să mă distrez construind.
+                            </p>
+                            <p>
+                                Am lucrat cam o săptămână, am făcut câteva clase, holurile și am recreat obiecte reale din școală, după care am uitat de el. Proiectul a rămas neatins o vreme.
+                            </p>
+                            <p>
+                                Dar anul acesta în <strong>ianuarie</strong> mi-am reamintit de el și, uitându-mă la ce construisem, mi-am dat seama că are potențial. E ceva special să te joci într-un loc pe care îl cunoști. Chiar dacă harta nu e 100% perfectă pentru că nu sunt arhitect, vibe-ul e acolo.
+                            </p>
+                            <p>
+                                <strong>Escape LTIJ</strong> nu e doar despre a evada, e despre liceul nostru.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <button class="carousel-arrow right" id="nextSlide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
     <section id="roadmap" class="dark-bg">
@@ -136,7 +169,7 @@
 
                 <div class="progress-card active-work">
                     <div class="working-badge">⚠️ ÎN LUCRU</div>
-                    <div class="circular-progress" data-progress="10">
+                    <div class="circular-progress" data-progress="23">
                         <div class="inner-circle"></div>
                         <span class="percentage">0%</span>
                     </div>
@@ -152,10 +185,40 @@
                     <h3>Magazine & Exterior</h3>
                     <p class="status-text">În așteptare</p>
                 </div>
+
+                <div class="progress-card">
+                    <div class="circular-progress" data-progress="34">
+                        <div class="inner-circle"></div>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <h3>Gameplay</h3>
+                    <p class="status-text">În așteptare</p>
+                </div>
             </div>
         </div>
     </section>
-	
+
+    <section id="trailer" class="dark-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gameplay Trailer</h2>
+                <p class="subtitle">Un preview al acțiunii te așteaptă</p>
+            </div>
+
+            <div class="trailer-container">
+                <div class="video-placeholder">
+                    <div class="play-icon-wrapper">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="coming-soon-overlay">
+                        <span class="coming-soon-badge">🎬 COMING SOON</span>
+                        <p>Trailer-ul oficial va fi lansat înainte de Beta</p>
+                    </div>
+                    <div class="scanlines"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Escape LTIJ Dev.</p>
