@@ -20,6 +20,13 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .hint-box,
@@ -181,18 +188,22 @@ a.logo:link {
     .device-card.small { width: 100%; justify-content: center; }
 
     .carousel-wrapper {
-        gap: 10px;
+        gap: 5px;
         padding: 0;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .carousel-container {
         min-height: auto;
-        overflow: visible;
+        overflow: hidden;
+        width: 100%;
     }
 
     .carousel-slide {
         position: relative;
+        width: 100%;
     }
 
     .carousel-slide:nth-child(1).active,
@@ -206,6 +217,9 @@ a.logo:link {
         transform: translateX(100vw);
         opacity: 0;
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
     .carousel-slide:nth-child(1).prev,
@@ -213,6 +227,9 @@ a.logo:link {
         transform: translateX(-100vw);
         opacity: 0;
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
     .carousel-slide.hidden {
@@ -220,33 +237,43 @@ a.logo:link {
     }
 
     .carousel-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
         flex-shrink: 0;
     }
 
     .story-content {
-        padding: 25px 18px;
-        width: 100%;
-        max-width: 100%;
+        padding: 20px 15px;
+        width: calc(100vw - 80px);
+        max-width: calc(100vw - 80px);
         height: auto;
         min-height: auto;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .story-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin-bottom: 8px;
     }
 
     .line {
-        margin: 0 auto 20px;
+        margin: 0 auto 15px;
+    }
+
+    .text-block {
+        overflow: hidden;
+        width: 100%;
     }
 
     .text-block p {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 15px;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .carousel-dots {
@@ -254,16 +281,23 @@ a.logo:link {
         margin-bottom: 20px;
     }
 
-    #story.container {
-        padding: 60px 5%;
+    #story {
+        padding: 50px 0;
+        overflow: hidden;
     }
 
     #roadmap {
-        padding-top: 80px;
+        padding-top: 60px;
     }
 
     .container {
-        padding: 60px 5%;
+        padding: 50px 5%;
+        overflow: hidden;
+    }
+
+    section {
+        overflow: hidden;
+        width: 100%;
     }
 
     .play-icon-wrapper {
@@ -423,17 +457,20 @@ header {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel-container {
     flex: 1;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1000px;
     min-height: 500px;
+    width: 100%;
 }
 
 .carousel-slide {
@@ -560,6 +597,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .story-content h2 {
