@@ -1,14 +1,11 @@
-/* =========================================
-   1. VARIABILE & RESET
-   ========================================= */
 :root {
     --bg-color: #0b0b0f;
     --card-bg: #15151a;
     --text-main: #ffffff;
     --text-muted: #a0a0a0;
     --accent: #00d2ff; 
-    --working: #ff9f43; /* Portocaliu - În Lucru */
-    --finished: #2ed573; /* Verde - Gata */
+    --working: #ff9f43;
+    --finished: #2ed573;
 }
 
 * {
@@ -25,9 +22,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-   2. NAVIGAȚIE
-   ========================================= */
 nav {
     display: flex;
     justify-content: space-between;
@@ -66,16 +60,34 @@ nav {
 
 .nav-links a:hover { color: var(--accent); }
 
-/* =========================================
-   MOBILE MENU (SIDEBAR FIXED)
-   ========================================= */
+.discord-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(88, 101, 242, 0.1);
+    border: 1px solid rgba(88, 101, 242, 0.3);
+    border-radius: 50%;
+    color: #5865F2;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
-/* 1. Butonul Hamburger */
+.discord-btn:hover {
+    background: #5865F2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
-    z-index: 2000; /* Super important: Z-Index mare ca să stea peste meniu */
-    position: relative; /* Ca sa asculte de z-index */
+    z-index: 2000;
+    position: relative;
 }
 
 .bar {
@@ -88,42 +100,39 @@ nav {
     border-radius: 3px;
 }
 
-/* 2. Setări doar pentru Telefon */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
     }
 
-    /* MENIUL LATERAL */
+    .discord-btn {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
-        right: -300px; /* Ascuns complet în dreapta (aceeasi valoare ca width) */
-        left: auto;    /* Ignorăm stânga */
-        
-        width: 250px !important; /* LĂȚIME FIXĂ - FORȚATĂ */
+        right: -300px;
+        left: auto;
+        width: 250px !important;
         height: 100vh;
-        
-        background-color: #0b0b0f; /* Culoare fundal */
-        border-left: 1px solid rgba(255,255,255,0.1); /* Linie fină în stânga */
-        box-shadow: -10px 0 50px rgba(0,0,0,0.8); /* Umbră ca să se vadă că e deasupra */
-        
+        background-color: #0b0b0f;
+        border-left: 1px solid rgba(255,255,255,0.1);
+        box-shadow: -10px 0 50px rgba(0,0,0,0.8);
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Link-urile pe mijlocul benzii */
+        justify-content: center;
         align-items: center;
         gap: 20px;
-        
-        transition: right 0.4s ease; /* Animație fluidă */
-        z-index: 1500; /* Sub butonul hamburger (2000), dar peste restul site-ului */
+        transition: right 0.4s ease;
+        z-index: 1500;
     }
 
-    /* Când meniul e deschis (JS adaugă clasa asta) */
     .nav-links.active {
-        right: 0; /* Vine pe ecran */
+        right: 0;
     }
 
-    /* Stil Link-uri */
     .nav-links li {
         width: 100%;
         text-align: center;
@@ -135,19 +144,14 @@ nav {
         font-size: 1.1rem;
     }
 
-    /* ANIMATIE BUTON X */
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--accent); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--accent); }
     
-    /* Fixuri vizuale generale pe mobil */
     .hero-content h1 { font-size: 2.2rem; }
     .device-card.small { width: 100%; justify-content: center; }
 }
 
-/* =========================================
-   4. HERO SECTION
-   ========================================= */
 header {
     height: 60vh;
     background: linear-gradient(rgba(0,0,0,0.6), var(--bg-color)), url('background.jpg'); 
@@ -176,9 +180,6 @@ header {
     font-size: 0.8rem;
 }
 
-/* =========================================
-   5. GENERAL CONTAINERS
-   ========================================= */
 .container { padding: 80px 10%; }
 .dark-bg { background: #0f0f13; }
 
@@ -186,9 +187,6 @@ header {
 .section-header h2 { font-size: 2rem; color: #fff; }
 .subtitle { color: var(--text-muted); }
 
-/* =========================================
-   6. COUNTDOWN SECTION
-   ========================================= */
 #countdown .container {
     padding-bottom: 20px; 
 }
@@ -234,9 +232,6 @@ header {
     font-style: italic;
 }
 
-/* =========================================
-   7. COMPACT DEVICES (Fix Spatiere)
-   ========================================= */
 .devices-grid {
     display: flex;
     justify-content: center;
@@ -287,9 +282,6 @@ header {
     display: block;
 }
 
-/* =========================================
-   8. STORY SECTION
-   ========================================= */
 .story-content {
     max-width: 800px;
     margin: 0 auto;
@@ -307,9 +299,6 @@ header {
     color: #ddd;
 }
 
-/* =========================================
-   9. PROGRESS / ROADMAP
-   ========================================= */
 .progress-container {
     display: flex;
     justify-content: center;
@@ -394,9 +383,6 @@ header {
 .finished .status-text { color: var(--finished); }
 .active-work .status-text { color: var(--working); }
 
-/* =========================================
-   10. FOOTER
-   ========================================= */
 footer {
     text-align: center;
     padding: 30px;
@@ -406,9 +392,6 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* =========================================
-   11. PAGINA SECRETA
-   ========================================= */
 .secret-header {
     height: 40vh;
     background: linear-gradient(rgba(0,0,0,0.8), var(--bg-color)), url('background.jpg');
@@ -501,4 +484,109 @@ footer {
     margin-bottom: 5px;
     font-size: 0.8rem;
     text-transform: uppercase;
+}
+
+.team-header {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.7), var(--bg-color)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: -30px;
+}
+
+.team-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+}
+
+.team-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+    position: relative;
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-avatar img {
+    transform: scale(1.1);
+}
+
+.team-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.team-card .role {
+    display: inline-block;
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-card .contribution {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.thanks-section {
+    margin-top: 80px;
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 210, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.thanks-section h3 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.thanks-section p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
 }
