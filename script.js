@@ -83,4 +83,44 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(progressSection);
     }
 
+    // Slideshow functionality
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slide-dot');
+
+    window.changeSlide = function(direction) {
+        currentSlideIndex += direction;
+        
+        if (currentSlideIndex >= slides.length) {
+            currentSlideIndex = 0;
+        }
+        if (currentSlideIndex < 0) {
+            currentSlideIndex = slides.length - 1;
+        }
+        
+        showSlide(currentSlideIndex);
+    };
+
+    window.currentSlide = function(index) {
+        currentSlideIndex = index;
+        showSlide(currentSlideIndex);
+    };
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (dots[i]) dots[i].classList.remove('active');
+        });
+        
+        if (slides[index]) slides[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
+    }
+
+    // Auto-advance slideshow every 5 seconds
+    if (slides.length > 0) {
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    }
+
 });
