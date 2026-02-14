@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const daysElement = document.getElementById("days");
     
     if (daysElement) {
-        const releaseDate = new Date("2026-02-18T20:00:00+02:00").getTime();
+        const releaseDate = new Date("2026-02-25T20:00:00+02:00").getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
